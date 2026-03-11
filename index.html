@@ -1,96 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./dist/main.css" />
-    <title>Mani Portfolio</title>
-  </head>
-  <body>
-    <!-- Navbar -->
-    <nav class="navbar sticky-top navbar-light bg-light">
-      <div class="container-fluid">
-        <span class="navbar-brand mb-0 h1">ManiKandan G</span>
-        <span class="ml-auto navbar-brand mb-0 h1"><a href="mailto:manikandan143g@gmail.com">E-mail</a></span>
-      </div>
-    </nav>
-    <!-- Cover Pic -->
-    <div class="jumbotron jumbotron-fluid bg-info">
-      <div class="container d-flex flex-column flex-md-row">
-<!--         <img src="./dist/me.png" class="rounded" alt="" /> -->
-        <div class="w-100">
-          <div class="float-right">
-            <h1 class="display-3">Hi, I am Mani</h1>
-            <p class="lead">I am a developer and a tester learning stuff.</p>
-            <a href="ManiResume.pdf" >
-            <button
-              type="button"
-              class="btn btn-success font-weight-bold float-right p-3 mb-4"
-            >
-              Download Resume
-            </button>
-          </a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="container">
-      <!-- About -->
-      <p class="display-4">About</p>
-      <p class="lead mb-5">
-        Hi I'm an MCA student im currently a freelance web developer ( HTML,Css, bootstrap, javascript,php, MySQL )
- Besides that I'm also learning testing (selenium IDE , selenium with java)
-      </p>
-      <p class="display-4">Education</p>
-      <p class="lead mb-5">
-        <b> Micro Trrigation Technician </b> - 2020
-                        Mitraniketan Krishi Vigyan Kendra <br><br>
-       <b> MCA  </b> - 7.45 CGPA (2017-2019)
-                        Mohandas College of Engineering, Trivandrum
-                        APJ Abdul Kalam Technological University <br><br>
-        <b> BCA </b> - 6.9 CGPA (2014-2017)
-                        National College of Arts and Science, Ambalathara Trivandrum
-                        University of Kerala <br><br>
-        <b> Higher Secondary Certificate </b> - 74% (2012-2014)
-                        Rkd Nss Higher Secondary School Trivandrum <br><br>
-        <b> Secondary School Leaving Certificate </b> - 75% (2012)
-                        MMRHSS Trivandrum
-      </p>
-      <p class="display-4">Work Experience</p>
-      <p class="lead mb-5">
-       <b> IT Supervisor  </b> - 6 Months
-                       NSEIT Trivandrum <br><br>
-        <b> Engineering Intern: AdOps </b> - 
-                        Airtory 
-      </p>
-      <p class="display-4">Areas of interest</p>
-      <p class="lead mb-5">
-        > Web development <br>
-        > Testing <br>
-        > Photo / Video Editing <br>
-        > Gaming 
-      </p>
-    </div>
-    <!-- footer -->
-    <div class="card mt-5">
-      <div class="card-body container">
-        <h5 class="card-title">Contact Me</h5>
-        <div class="d-flex">
-          <a href="https://www.facebook.com/manikandan143g/">
-          <img
-            src="./dist/facebook-circular-logo.svg"
-            class="m-3"
-            alt=""
-            srcset=""
-          /> </a>
-          <a href="https://www.instagram.com/__m__a__n____i__/"><img src="./dist/instagram.svg" class="m-3" alt="" srcset="" /></a>
-          <a href="https://www.linkedin.com/in/manikandan-g-8093a3131/"><img src="./dist/linkedin.svg" class="m-3" alt="" srcset="" /></a>
-         <a href="https://www.youtube.com/channel/UC_J5fE9By5khY2YkRp1kmxg"><img src="./dist/youtube.svg" class="m-3" alt="" srcset="" /></a>
-        </div>
-        <h3 class="text-success"><a href="tel:+918156922774">Phone</a></h3>
-      </div>
-    </div>
-    <script src="./dist/bundle.js"></script>
-  </body>
+
+<head>
+<meta charset="UTF-8">
+<title>Manikandan | Developer Journey</title>
+
+<script src="https://cdn.jsdelivr.net/npm/phaser@3/dist/phaser.js"></script>
+<link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+<div id="ui">
+<h1>Manikandan G</h1>
+<p>Drag the character and explore my journey</p>
+</div>
+
+<div id="infoBox"></div>
+
+<script src="game.js"></script>
+
+</body>
 </html>
