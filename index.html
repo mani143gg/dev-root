@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 
 <meta charset="UTF-8">
@@ -13,11 +12,32 @@
 
 <style>
 
+html{
+scroll-behavior:smooth;
+}
+
 body{
 background:#0b0f19;
 color:white;
 font-family:system-ui;
 }
+
+/* NAVBAR */
+
+nav{
+position:sticky;
+top:0;
+background:#0b0f19;
+z-index:100;
+}
+
+/* SECTION OFFSET */
+
+section{
+scroll-margin-top:100px;
+}
+
+/* GLASS UI */
 
 .glass{
 backdrop-filter:blur(16px);
@@ -32,6 +52,8 @@ transform:translateY(-8px) scale(1.02);
 box-shadow:0 15px 45px rgba(0,0,0,0.6);
 }
 
+/* TIMELINE */
+
 .timeline{
 padding:12px 20px;
 border:1px solid rgba(255,255,255,0.1);
@@ -39,12 +61,52 @@ border-radius:20px;
 background:#111827;
 }
 
+/* PROFILE IMAGE */
+
 .profile-img{
 width:220px;
 height:220px;
 border-radius:50%;
 object-fit:cover;
 border:2px solid rgba(255,255,255,0.1);
+filter:grayscale(1) contrast(1.1);
+}
+
+/* MOBILE MENU */
+
+#menu{
+backdrop-filter:blur(10px);
+border-top:1px solid rgba(255,255,255,.08);
+}
+
+/* NAV ITEM ANIMATION */
+
+.navItem{
+opacity:0;
+transform:translateY(15px);
+}
+
+.navItem.show{
+animation:fadeUp .4s forwards;
+}
+
+@keyframes fadeUp{
+to{
+opacity:1;
+transform:translateY(0);
+}
+}
+
+.navItem:nth-child(1){animation-delay:.1s;}
+.navItem:nth-child(2){animation-delay:.2s;}
+.navItem:nth-child(3){animation-delay:.3s;}
+.navItem:nth-child(4){animation-delay:.4s;}
+
+@keyframes navFade{
+to{
+opacity:1;
+transform:translateY(0);
+}
 }
 
 </style>
@@ -55,18 +117,24 @@ border:2px solid rgba(255,255,255,0.1);
 
 <!-- NAVBAR -->
 
-<nav class="flex justify-between items-center px-10 py-6">
+<nav class="flex justify-between items-center px-6 py-5">
 
 <h1 class="text-yellow-400 font-bold text-xl">
 Manikandan.dev
 </h1>
 
-<div class="space-x-6 text-gray-300">
+<button id="menuBtn" class="md:hidden text-white text-2xl">
+☰
+</button>
 
-<a href="#skills">Skills</a>
-<a href="#projects">Projects</a>
-<a href="#timeline">Experience</a>
-<a href="#contact">Contact</a>
+<div id="menu"
+class="hidden absolute top-16 left-0 w-full bg-[#0b0f19] p-6
+flex-col space-y-5 md:space-y-0 md:flex md:flex-row md:static md:w-auto md:bg-transparent md:p-0 md:space-x-6">
+
+<a class="navItem block" href="#skills">Skills</a>
+<a class="navItem block" href="#projects">Projects</a>
+<a class="navItem block" href="#timeline">Experience</a>
+<a class="navItem block" href="#contact">Contact</a>
 
 </div>
 
@@ -94,17 +162,13 @@ Software Engineer
 
 <div class="mt-6 space-x-4">
 
-<a href="ManiResume.pdf">
 <button class="bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold">
 Download Resume
 </button>
-</a>
 
-<a href="mailto:manikandan143g@gmail.com">
 <button class="border border-yellow-500 px-6 py-3 rounded-lg">
 Hire Me
 </button>
-</a>
 
 </div>
 
@@ -127,7 +191,7 @@ Hire Me
 </div>
 
 <div>
-<h2 class="text-4xl text-yellow-400 font-bold">10</h2>
+<h2 class="text-4xl text-yellow-400 font-bold">20+</h2>
 <p class="text-gray-400">Projects</p>
 </div>
 
@@ -279,7 +343,6 @@ Skills Dashboard
 <div class="glass p-6">Docker</div>
 <div class="glass p-6">Tailwind CSS</div>
 <div class="glass p-6">MySQL</div>
-<div class="glass p-6">PHP</div>
 
 </div>
 
@@ -297,8 +360,8 @@ Contact
 <div class="flex justify-center gap-6 text-gray-300">
 
 <a href="mailto:manikandan143g@gmail.com">Email</a>
-<a href="https://github.com/mani143gg">GitHub</a>
-<a href="https://linkedin.com/in/manikandan-g-dev23051996">LinkedIn</a>
+<a href="https://github.com">GitHub</a>
+<a href="https://linkedin.com">LinkedIn</a>
 
 </div>
 
@@ -306,6 +369,8 @@ Contact
 
 
 <script>
+
+/* typing animation */
 
 new Typed("#typing",{
 
@@ -318,6 +383,32 @@ strings:[
 typeSpeed:50,
 backSpeed:25,
 loop:true
+
+})
+
+/* mobile menu */
+
+const btn = document.getElementById("menuBtn")
+const menu = document.getElementById("menu")
+const items = document.querySelectorAll(".navItem")
+
+btn.addEventListener("click", () => {
+
+menu.classList.toggle("hidden")
+
+if(!menu.classList.contains("hidden")){
+
+items.forEach((item,index)=>{
+
+item.classList.remove("show")
+
+setTimeout(()=>{
+item.classList.add("show")
+},150*index)
+
+})
+
+}
 
 })
 
