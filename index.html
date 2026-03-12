@@ -1,133 +1,325 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>Pixel Career Journey</title>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Manikandan G | Software Engineer</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
 
 <style>
 
 body{
-  margin:0;
-  font-family:monospace;
-  background:#87CEEB;
-  overflow-x:hidden;
+background:#0b0f19;
+color:white;
+font-family:system-ui;
 }
 
-/* world */
-
-.world{
-  height:500vh;
-  position:relative;
-  background:linear-gradient(#87CEEB 0%, #87CEEB 30%, #6cc46c 30%);
+.glass{
+backdrop-filter:blur(16px);
+background:rgba(255,255,255,0.04);
+border:1px solid rgba(255,255,255,0.08);
+border-radius:14px;
+transition:0.35s;
 }
 
-/* footpath */
-
-.path{
-  position:absolute;
-  left:50%;
-  transform:translateX(-50%);
-  width:120px;
-  height:100%;
-  background:#c2a47b;
+.glass:hover{
+transform:translateY(-8px) scale(1.02);
+box-shadow:0 15px 45px rgba(0,0,0,0.6);
 }
 
-/* character */
-
-.character{
-  position:fixed;
-  bottom:80px;
-  left:50%;
-  transform:translateX(-50%);
-  width:80px;
-  height:80px;
-  background:url("https://i.imgur.com/4LGAZ8t.png");
-  background-size:cover;
+.timeline{
+padding:12px 20px;
+border:1px solid rgba(255,255,255,0.1);
+border-radius:20px;
+background:#111827;
 }
 
-/* levels */
-
-.level{
-  height:100vh;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  position:relative;
-}
-
-.banner{
-  background:white;
-  padding:20px 35px;
-  border-radius:10px;
-  font-size:20px;
-  box-shadow:0 10px 25px rgba(0,0,0,0.2);
-  opacity:0;
-  transform:translateY(40px);
+.profile-img{
+width:220px;
+height:220px;
+border-radius:50%;
+object-fit:cover;
+border:2px solid rgba(255,255,255,0.1);
 }
 
 </style>
+
 </head>
 
 <body>
 
-<div class="world">
+<!-- NAVBAR -->
 
-<div class="path"></div>
-<div class="character" id="player"></div>
+<nav class="flex justify-between items-center px-10 py-6">
 
-<section class="level">
-<div class="banner">🎓 Education – BCA → MCA</div>
-</section>
+<h1 class="text-yellow-400 font-bold text-xl">
+Manikandan.dev
+</h1>
 
-<section class="level">
-<div class="banner">💼 NSEIT – IT Supervisor</div>
-</section>
+<div class="space-x-6 text-gray-300">
 
-<section class="level">
-<div class="banner">🚀 Airtory – Software Engineer</div>
-</section>
-
-<section class="level">
-<div class="banner">⚡ Future Goal – Full Stack + DevOps</div>
-</section>
+<a href="#skills">Skills</a>
+<a href="#projects">Projects</a>
+<a href="#timeline">Experience</a>
+<a href="#contact">Contact</a>
 
 </div>
 
+</nav>
+
+
+<!-- HERO -->
+
+<section class="max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-10 mt-10 px-6">
+
+<div class="flex-1">
+
+<h1 class="text-5xl font-bold leading-tight">
+Hey, I'm
+<span class="text-yellow-400">Manikandan G</span>
+</h1>
+
+<p class="text-gray-400 mt-4 text-xl">
+Software Engineer
+</p>
+
+<p class="text-green-400 mt-3">
+<span id="typing"></span>
+</p>
+
+<div class="mt-6 space-x-4">
+
+<a href="ManiResume.pdf">
+<button class="bg-yellow-500 text-black px-6 py-3 rounded-lg font-semibold">
+Download Resume
+</button>
+</a>
+
+<a href="mailto:manikandan143g@gmail.com">
+<button class="border border-yellow-500 px-6 py-3 rounded-lg">
+Hire Me
+</button>
+</a>
+
+</div>
+
+</div>
+
+<img src="me.png" class="profile-img">
+
+</section>
+
+
+<!-- STATS -->
+
+<section class="max-w-6xl mx-auto mt-16 px-6">
+
+<div class="glass grid grid-cols-2 md:grid-cols-4 text-center p-8 gap-6">
+
+<div>
+<h2 class="text-4xl text-yellow-400 font-bold">4.5+</h2>
+<p class="text-gray-400">Years Experience</p>
+</div>
+
+<div>
+<h2 class="text-4xl text-yellow-400 font-bold">10</h2>
+<p class="text-gray-400">Projects</p>
+</div>
+
+<div>
+<h2 class="text-4xl text-yellow-400 font-bold">Vue.js</h2>
+<p class="text-gray-400">Main Stack</p>
+</div>
+
+<div>
+<h2 class="text-4xl text-yellow-400 font-bold">AdTech</h2>
+<p class="text-gray-400">Industry</p>
+</div>
+
+</div>
+
+</section>
+
+
+<!-- TIMELINE -->
+
+<section id="timeline" class="max-w-6xl mx-auto mt-20 px-6">
+
+<h2 class="text-3xl text-yellow-400 font-bold mb-10">
+Career Timeline
+</h2>
+
+<div class="flex flex-wrap gap-4">
+
+<div class="timeline">BCA<br>2014-2017</div>
+<div class="timeline">MCA<br>2017-2019</div>
+<div class="timeline">NSEIT<br>2020</div>
+<div class="timeline">Airtory<br>2021-Present</div>
+
+</div>
+
+</section>
+
+
+<!-- EXPERIENCE -->
+
+<section class="max-w-6xl mx-auto mt-20 grid md:grid-cols-2 gap-10 px-6">
+
+<div class="glass p-6">
+
+<h3 class="text-xl font-bold mb-2">
+Software Engineer
+</h3>
+
+<p class="text-yellow-400 mb-2">
+Airtory | Oct 2021 – Present
+</p>
+
+<p class="text-gray-400">
+Building high scale ad-tech web applications using Vue.js,
+Vanilla JS and Laravel APIs.
+</p>
+
+</div>
+
+
+<div class="glass p-6">
+
+<h3 class="text-xl font-bold mb-2">
+IT Supervisor
+</h3>
+
+<p class="text-yellow-400 mb-2">
+NSEIT | 2020
+</p>
+
+<p class="text-gray-400">
+Developed monitoring systems and automated failover systems.
+</p>
+
+</div>
+
+</section>
+
+
+<!-- PROJECTS -->
+
+<section id="projects" class="max-w-6xl mx-auto mt-20 px-6">
+
+<h2 class="text-3xl text-yellow-400 font-bold mb-8">
+Projects
+</h2>
+
+<div class="grid md:grid-cols-2 gap-8">
+
+<div class="glass p-6">
+
+<h3 class="text-xl font-bold mb-2">
+Card Detection using ML
+</h3>
+
+<p class="text-gray-400 mb-3">
+Mini Project – MCA
+</p>
+
+<p class="text-gray-300 mb-4">
+Machine learning model to detect playing cards using computer vision.
+</p>
+
+<div class="text-sm text-yellow-400">
+Python • TensorFlow • Keras
+</div>
+
+</div>
+
+
+<div class="glass p-6">
+
+<h3 class="text-xl font-bold mb-2">
+ME_CARD – Medical Treatment Card
+</h3>
+
+<p class="text-gray-400 mb-3">
+Final Year Project – BCA
+</p>
+
+<p class="text-gray-300 mb-4">
+Web-based medical card storing patient details, medicine history and lab results.
+</p>
+
+<div class="text-sm text-yellow-400">
+JavaScript • PHP • MySQL
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- SKILLS -->
+
+<section id="skills" class="max-w-6xl mx-auto mt-20 px-6">
+
+<h2 class="text-3xl text-yellow-400 font-bold mb-6">
+Skills Dashboard
+</h2>
+
+<div class="grid md:grid-cols-3 gap-6">
+
+<div class="glass p-6">JavaScript</div>
+<div class="glass p-6">Vue.js</div>
+<div class="glass p-6">Laravel</div>
+<div class="glass p-6">Docker</div>
+<div class="glass p-6">Tailwind CSS</div>
+<div class="glass p-6">MySQL</div>
+<div class="glass p-6">PHP</div>
+
+</div>
+
+</section>
+
+
+<!-- CONTACT -->
+
+<section id="contact" class="max-w-6xl mx-auto mt-20 mb-20 text-center px-6">
+
+<h2 class="text-3xl text-yellow-400 font-bold mb-6">
+Contact
+</h2>
+
+<div class="flex justify-center gap-6 text-gray-300">
+
+<a href="mailto:manikandan143g@gmail.com">Email</a>
+<a href="https://github.com/mani143gg">GitHub</a>
+<a href="https://linkedin.com/in/manikandan-g-dev23051996">LinkedIn</a>
+
+</div>
+
+</section>
+
+
 <script>
 
-gsap.registerPlugin(ScrollTrigger);
+new Typed("#typing",{
 
-/* move character */
+strings:[
+"I build high-scale web apps",
+"Vue.js + Laravel developer",
+"AdTech platform engineer"
+],
 
-gsap.to("#player",{
-  y:-1800,
-  ease:"none",
-  scrollTrigger:{
-    trigger:".world",
-    start:"top top",
-    end:"bottom bottom",
-    scrub:true
-  }
-});
+typeSpeed:50,
+backSpeed:25,
+loop:true
 
-/* banner animation */
-
-gsap.utils.toArray(".banner").forEach((banner)=>{
-
-  gsap.to(banner,{
-    opacity:1,
-    y:0,
-    duration:1,
-    scrollTrigger:{
-      trigger:banner,
-      start:"top 80%"
-    }
-  });
-
-});
+})
 
 </script>
 
