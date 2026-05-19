@@ -219,15 +219,37 @@ Career Timeline
 
 <!-- PROJECTS -->
 
-<section id="projects" class="max-w-6xl mx-auto mt-20 px-6">
+<section id="projects" class="max-w-6xl mx-auto mt-20 px-6 overflow-hidden">
 
 <h2 class="text-3xl text-yellow-400 font-bold mb-8">
 Projects
 </h2>
 
-<div class="grid md:grid-cols-2 gap-8">
+<div class="relative">
 
-<div class="glass p-6">
+<!-- buttons -->
+
+<button id="prevProject"
+class="absolute left-0 top-1/2 -translate-y-1/2 z-10
+bg-yellow-500 text-black w-10 h-10 rounded-full">
+❮
+</button>
+
+<button id="nextProject"
+class="absolute right-0 top-1/2 -translate-y-1/2 z-10
+bg-yellow-500 text-black w-10 h-10 rounded-full">
+❯
+</button>
+
+<!-- carousel -->
+
+<div id="projectCarousel"
+class="flex gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory
+pb-4 no-scrollbar">
+
+<!-- PROJECT 1 -->
+
+<div class="glass min-w-full md:min-w-[48%] p-6 snap-center">
 
 <h3 class="text-xl font-bold mb-2">
 Card Detection using ML
@@ -247,8 +269,9 @@ Python • TensorFlow • Keras
 
 </div>
 
+<!-- PROJECT 2 -->
 
-<div class="glass p-6">
+<div class="glass min-w-full md:min-w-[48%] p-6 snap-center">
 
 <h3 class="text-xl font-bold mb-2">
 ME_CARD – Medical Treatment Card
@@ -259,7 +282,8 @@ Final Year Project – BCA
 </p>
 
 <p class="text-gray-300 mb-4">
-Web-based medical card storing patient details, medicine history and lab results.
+Web-based medical card storing patient details,
+medicine history and lab results.
 </p>
 
 <div class="text-sm text-yellow-400">
@@ -268,9 +292,103 @@ JavaScript • PHP • MySQL
 
 </div>
 
+<!-- PROJECT 3 -->
+
+<div class="glass min-w-full md:min-w-[48%] p-6 snap-center">
+
+<h3 class="text-xl font-bold mb-2">
+Cloud-Based File Upload Application
+</h3>
+
+<p class="text-gray-400 mb-3">
+Angular + AWS
+</p>
+
+<ul class="text-gray-300 mb-4 space-y-2 list-disc pl-5">
+<li>Developed responsive Angular application deployed on AWS EC2</li>
+<li>Integrated Amazon S3 for scalable file storage</li>
+<li>Configured IAM roles, bucket policies, and CORS</li>
+<li>Ensured secure and optimized file handling</li>
+</ul>
+
+<div class="text-sm text-yellow-400">
+Angular • AWS EC2 • Amazon S3 • IAM
+</div>
+
+</div>
+
+<!-- PROJECT 4 -->
+
+<div class="glass min-w-full md:min-w-[48%] p-6 snap-center">
+
+<h3 class="text-xl font-bold mb-2">
+Docker-Based Full Stack Deployment
+</h3>
+
+<p class="text-gray-400 mb-3">
+Vue.js + Laravel + Docker
+</p>
+
+<ul class="text-gray-300 mb-4 space-y-2 list-disc pl-5">
+<li>Containerized Vue.js + Laravel + MySQL stack using Docker</li>
+<li>Deployed on AWS EC2 with RDS integration</li>
+<li>Reduced Docker image size by 40%</li>
+<li>Improved deployment efficiency and scalability</li>
+</ul>
+
+<div class="text-sm text-yellow-400">
+Vue.js • Laravel • Docker • AWS EC2 • MySQL
+</div>
+
+</div>
+
+</div>
+
 </div>
 
 </section>
+
+/* hide scrollbar */
+
+.no-scrollbar::-webkit-scrollbar{
+display:none;
+}
+
+.no-scrollbar{
+-ms-overflow-style:none;
+scrollbar-width:none;
+}
+```
+
+```html
+<script>
+
+/* PROJECT CAROUSEL */
+
+const carousel=document.getElementById("projectCarousel")
+const nextBtn=document.getElementById("nextProject")
+const prevBtn=document.getElementById("prevProject")
+
+nextBtn.addEventListener("click",()=>{
+
+carousel.scrollBy({
+left:carousel.offsetWidth,
+behavior:"smooth"
+})
+
+})
+
+prevBtn.addEventListener("click",()=>{
+
+carousel.scrollBy({
+left:-carousel.offsetWidth,
+behavior:"smooth"
+})
+
+})
+
+</script>
+
 
 
 <!-- SKILLS -->
